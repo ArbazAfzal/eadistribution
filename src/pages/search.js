@@ -17,7 +17,6 @@ const Search = ({ products, attributes }) => {
   const { t } = useTranslation();
   const { isLoading, setIsLoading } = useContext(SidebarContext);
   const [visibleProduct, setVisibleProduct] = useState(18);
-
   useEffect(() => {
     setIsLoading(false);
   }, [products]);

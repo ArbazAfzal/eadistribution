@@ -1,5 +1,12 @@
+import { UserContext } from "@context/UserContext";
+import { useContext } from "react";
+
 const Price = ({ product, price, card, currency, originalPrice }) => {
-  // console.log("price", price, "originalPrice", originalPrice, "card", card);
+  console.log("price", price, "originalPrice", originalPrice, "card", card);
+
+  const {
+    state: { userInfo },
+  } = useContext(UserContext)
   return (
     <div className="font-serif product-price font-bold">
       {product?.variants.length > 0 ? (
@@ -11,8 +18,11 @@ const Price = ({ product, price, card, currency, originalPrice }) => {
                 : "inline-block text-2xl"
             }
           >
-            {currency}
-            {price}
+            {userInfo ? <>
+              {currency}
+              {price}
+            </> : ''}
+
           </span>
           {originalPrice > price && !card ? (
             <>
@@ -23,8 +33,8 @@ const Price = ({ product, price, card, currency, originalPrice }) => {
                     : "text-lg font-normal text-gray-400 ml-1"
                 }
               >
-                {currency}
-                {parseFloat(originalPrice).toFixed(2)}
+                {userInfo ? <>{currency}
+                  {parseFloat(originalPrice).toFixed(2)}</> : ''}
               </del>
             </>
           ) : null}
@@ -38,8 +48,9 @@ const Price = ({ product, price, card, currency, originalPrice }) => {
                 : "inline-block text-2xl"
             }
           >
-            {currency}
-            {product?.prices?.price}
+            {userInfo ? <>
+              {currency}
+              {product?.prices?.price}</> : ""}
           </span>
           {originalPrice > price && card ? (
             <>
@@ -50,8 +61,8 @@ const Price = ({ product, price, card, currency, originalPrice }) => {
                     : "text-lg font-normal text-gray-400 ml-1"
                 }
               >
-                {currency}
-                {parseFloat(originalPrice).toFixed(2)}
+                {userInfo ? <>{currency}
+                  {parseFloat(originalPrice).toFixed(2)}</> : ""}
               </del>
             </>
           ) : null}
