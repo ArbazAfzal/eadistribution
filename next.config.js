@@ -10,7 +10,6 @@ const withPWA = require("next-pwa")({
   skipWaiting: true,
   disable: process.env.NODE_ENV === "development",
 });
-
 module.exports = withPWA({
   reactStrictMode: true,
   eslint: {
@@ -44,7 +43,6 @@ module.exports = withPWA({
       },
     ],
   },
-
   images: {
     domains: [
       "images.unsplash.com",
@@ -60,12 +58,18 @@ module.exports = withPWA({
       "images.dashter.com",
     ],
   },
-
   ...nextTranslate(),
 });
-
 // const withBundleAnalyzer = require('@next/bundle-analyzer')({
 //   enabled: process.env.ANALYZE === 'true',
 // });
-
 // module.exports = withBundleAnalyzer({});
+
+
+
+
+
+
+
+
+

@@ -108,7 +108,7 @@ const ProductCard = ({ product, attributes }) => {
               card
               product={product}
               currency={currency}
-              price={product.prices.price}
+              price={product?.prices?.price}
               originalPrice={product?.prices?.originalPrice}
             />
 
