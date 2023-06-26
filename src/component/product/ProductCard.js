@@ -52,8 +52,7 @@ const ProductCard = ({ product, attributes }) => {
       price: p.prices.price,
       originalPrice: product.prices?.originalPrice,
     };
-    addItem(newItem);
-  }
+    addItem(newItem);}
   };
 
   const handleModalOpen = (event, id) => {

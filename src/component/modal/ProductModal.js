@@ -141,10 +141,13 @@ const ProductModal = ({
   }, [variants, attributes]);
 
   const handleAddToCart = (p) => {
-   if(!userInfo){
-    toast("Please login first")
-   }
-   else{
+    if(userInfo){
+      
+     
+    }
+    else{
+
+    
     if (p.variants.length === 1 && p.variants[0].quantity < 1)
     return notifyError("Insufficient stock");
 
@@ -188,11 +191,11 @@ const ProductModal = ({
 
     // console.log("newItem", newItem);
 
-    handleAddItem(newItem);
-  } else {
-    return notifyError("Please select all variant first!");
+      handleAddItem(newItem);
+    } else {
+      return notifyError("Please select all variant first!");
+    }
   }
-   } 
   };
 
   const handleMoreInfo = (slug) => {
@@ -318,13 +321,14 @@ const ProductModal = ({
                       </span>
                     </button>
                   </div>
-                  <button
-                    onClick={() => handleAddToCart(product)}
-                    disabled={product.quantity < 1}
-                    className="text-sm leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold font-serif text-center justify-center border-0 border-transparent rounded-md focus-visible:outline-none focus:outline-none text-white px-4 ml-4 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4 hover:text-white bg-emerald-500 hover:bg-emerald-600 w-full h-12"
-                  >
-                    {t("common:addToCart")}
-                  </button>
+                     <button
+                     onClick={() => handleAddToCart(product)}
+                     disabled={product.quantity < 1}
+                     className="text-sm leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold font-serif text-center justify-center border-0 border-transparent rounded-md focus-visible:outline-none focus:outline-none text-white px-4 ml-4 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4 hover:text-white bg-emerald-500 hover:bg-emerald-600 w-full h-12"
+                   >
+                     {t("common:addToCart")}
+                   </button>
+               
                 </div>
               </div>
               <div className="flex items-center mt-4">

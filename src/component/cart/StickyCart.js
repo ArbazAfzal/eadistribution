@@ -7,6 +7,7 @@ import { useCart } from "react-use-cart";
 import { SidebarContext } from "@context/SidebarContext";
 import useAsync from "@hooks/useAsync";
 import SettingServices from "@services/SettingServices";
+import { UserContext } from "@context/UserContext";
 
 const StickyCart = () => {
   const { totalItems, cartTotal } = useCart();
@@ -14,6 +15,9 @@ const StickyCart = () => {
   const { data: globalSetting } = useAsync(SettingServices.getGlobalSetting);
 
   const currency = globalSetting?.default_currency || "$";
+  const {
+    state: { userInfo }
+  } = useContext(UserContext);
 
   return (
     <button aria-label="Cart" onClick={toggleCartDrawer} className="absolute">
@@ -28,7 +32,7 @@ const StickyCart = () => {
         </div>
         <div className="flex flex-col items-center justify-center bg-emerald-700 p-2 text-white text-base font-serif font-medium rounded-bl-lg mx-auto">
           {currency}
-          {cartTotal.toFixed(2)}
+          {!userInfo ? 0 : cartTotal.toFixed(2)}
         </div>
       </div>
     </button>
