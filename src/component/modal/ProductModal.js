@@ -186,6 +186,7 @@ const ProductModal = ({
 
     router.push(`/product/${slug}`);
     setIsLoading(!isLoading);
+    
   };
 
   const category_name = showingTranslateValue(product?.category?.name)
