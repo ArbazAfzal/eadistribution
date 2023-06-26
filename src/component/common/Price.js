@@ -2,11 +2,7 @@ import { UserContext } from "@context/UserContext";
 import { useContext } from "react";
 
 const Price = ({ product, price, card, currency, originalPrice }) => {
-  console.log("🚀 ~ file: Price.js:5 ~ Price ~ currency:", currency)
-  console.log("🚀 ~ file: Price.js:5 ~ Price ~ card:", card)
-  console.log("🚀 ~ file: Price.js:5 ~ Price ~ product:", product)
-  console.log("🚀 ~ file: Price.js:5 ~ Price ~ originalPrice:", originalPrice)
-  console.log("🚀 ~ file: Price.js:2 ~ Price ~ price:", price)
+
   const {
     state: { userInfo }
   } = useContext(UserContext);
@@ -22,8 +18,8 @@ const Price = ({ product, price, card, currency, originalPrice }) => {
                 : "inline-block text-2xl"
             }
           >
-         { userInfo?<>{currency}
-            {price}</> :"" }
+            {userInfo ? <>{currency}
+              {price}</> : ""}
           </span>
           {originalPrice > price && !card ? (
             <>
@@ -34,8 +30,8 @@ const Price = ({ product, price, card, currency, originalPrice }) => {
                     : "text-lg font-normal text-gray-400 ml-1"
                 }
               >
-               {userInfo?<> {currency}
-                {parseFloat(originalPrice).toFixed(2)}</>:""}
+                {userInfo ? <> {currency}
+                  {parseFloat(originalPrice).toFixed(2)}</> : ""}
               </del>
             </>
           ) : null}
@@ -49,8 +45,8 @@ const Price = ({ product, price, card, currency, originalPrice }) => {
                 : "inline-block text-2xl"
             }
           >
-           {userInfo?<> {currency}
-            {price}</>:""}
+            {userInfo ? <> {currency}
+              {price}</> : ""}
           </span>
           {originalPrice > price && card ? (
             <>
@@ -61,8 +57,8 @@ const Price = ({ product, price, card, currency, originalPrice }) => {
                     : "text-lg font-normal text-gray-400 ml-1"
                 }
               >
-                {userInfo?<>{currency}
-                {parseFloat(originalPrice).toFixed(2)}</>:""}
+                {userInfo ? <>{currency}
+                  {parseFloat(originalPrice).toFixed(2)}</> : ""}
               </del>
             </>
           ) : null}
