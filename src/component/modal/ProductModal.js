@@ -7,13 +7,17 @@ import VariantList from "@component/variants/VariantList";
 import { SidebarContext } from "@context/SidebarContext";
 import useAddToCart from "@hooks/useAddToCart";
 import { notifyError } from "@utils/toast";
+import { UserContext } from "@context/UserContext";
+import { useContext } from "react";
+
 import { showingTranslateValue } from "@utils/translate";
 import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import { FiMinus, FiPlus } from "react-icons/fi";
+import { toast } from "react-toastify";
 
 const ProductModal = ({
   modalOpen,
@@ -26,7 +30,12 @@ const ProductModal = ({
   const { setIsLoading, isLoading } = useContext(SidebarContext);
   const { t, lang } = useTranslation("ns1");
   const { handleAddItem, setItem, item } = useAddToCart();
-
+ 
+  
+    const {
+      state: { userInfo }
+    } = useContext(UserContext);
+  
   // react hook
   const [value, setValue] = useState("");
   const [price, setPrice] = useState(0);
@@ -132,53 +141,61 @@ const ProductModal = ({
   }, [variants, attributes]);
 
   const handleAddToCart = (p) => {
+    if(userInfo){
+      
+     
+    }
+    else{
+
+    
     if (p.variants.length === 1 && p.variants[0].quantity < 1)
-      return notifyError("Insufficient stock");
+    return notifyError("Insufficient stock");
 
-    if (stock <= 0) return notifyError("Insufficient stock");
+  if (stock <= 0) return notifyError("Insufficient stock");
 
-    if (
-      product?.variants.map(
-        (variant) =>
-          Object.entries(variant).sort().toString() ===
-          Object.entries(selectVariant).sort().toString()
-      )
-    ) {
-      const { slug, variants, categories, description, ...updatedProduct } =
-        product;
-      const newItem = {
-        ...updatedProduct,
-        id: `${
-          p?.variants.length <= 0
-            ? p._id
-            : p._id +
-              "-" +
-              variantTitle?.map((att) => selectVariant[att._id]).join("-")
-        }`,
-        title: `${
-          p?.variants.length <= 0
-            ? showingTranslateValue(p.title, lang)
-            : showingTranslateValue(p.title, lang) +
-              "-" +
-              variantTitle
-                ?.map((att) =>
-                  att.variants?.find((v) => v._id === selectVariant[att._id])
-                )
-                .map((el) => showingTranslateValue(el?.name, lang))
-        }`,
-        image: img,
-        variant: selectVariant || {},
-        price: p.variants.length === 0 ? p.prices.originalPrice : price,
-        originalPrice:
-          p.variants.length === 0 ? p.prices.originalPrice : originalPrice,
-      };
+  if (
+    product?.variants.map(
+      (variant) =>
+        Object.entries(variant).sort().toString() ===
+        Object.entries(selectVariant).sort().toString()
+    )
+  ) {
+    const { slug, variants, categories, description, ...updatedProduct } =
+      product;
+    const newItem = {
+      ...updatedProduct,
+      id: `${
+        p?.variants.length <= 0
+          ? p._id
+          : p._id +
+            "-" +
+            variantTitle?.map((att) => selectVariant[att._id]).join("-")
+      }`,
+      title: `${
+        p?.variants.length <= 0
+          ? showingTranslateValue(p.title, lang)
+          : showingTranslateValue(p.title, lang) +
+            "-" +
+            variantTitle
+              ?.map((att) =>
+                att.variants?.find((v) => v._id === selectVariant[att._id])
+              )
+              .map((el) => showingTranslateValue(el?.name, lang))
+      }`,
+      image: img,
+      variant: selectVariant || {},
+      price: p.variants.length === 0 ? p.prices.originalPrice : price,
+      originalPrice:
+        p.variants.length === 0 ? p.prices.originalPrice : originalPrice,
+    };
 
-      // console.log("newItem", newItem);
+    // console.log("newItem", newItem);
 
       handleAddItem(newItem);
     } else {
       return notifyError("Please select all variant first!");
     }
+  }
   };
 
   const handleMoreInfo = (slug) => {
@@ -186,6 +203,7 @@ const ProductModal = ({
 
     router.push(`/product/${slug}`);
     setIsLoading(!isLoading);
+
   };
 
   const category_name = showingTranslateValue(product?.category?.name)
@@ -303,13 +321,14 @@ const ProductModal = ({
                       </span>
                     </button>
                   </div>
-                  <button
-                    onClick={() => handleAddToCart(product)}
-                    disabled={product.quantity < 1}
-                    className="text-sm leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold font-serif text-center justify-center border-0 border-transparent rounded-md focus-visible:outline-none focus:outline-none text-white px-4 ml-4 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4 hover:text-white bg-emerald-500 hover:bg-emerald-600 w-full h-12"
-                  >
-                    {t("common:addToCart")}
-                  </button>
+                     <button
+                     onClick={() => handleAddToCart(product)}
+                     disabled={product.quantity < 1}
+                     className="text-sm leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold font-serif text-center justify-center border-0 border-transparent rounded-md focus-visible:outline-none focus:outline-none text-white px-4 ml-4 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4 hover:text-white bg-emerald-500 hover:bg-emerald-600 w-full h-12"
+                   >
+                     {t("common:addToCart")}
+                   </button>
+               
                 </div>
               </div>
               <div className="flex items-center mt-4">

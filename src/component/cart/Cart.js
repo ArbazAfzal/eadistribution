@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useCart } from "react-use-cart";
 import { IoBagCheckOutline, IoClose, IoBagHandle } from "react-icons/io5";
 
@@ -15,7 +15,7 @@ import useAsync from "@hooks/useAsync";
 const Cart = () => {
   const router = useRouter();
   const [modalOpen, setModalOpen] = useState(false);
-  const { isEmpty, items, cartTotal } = useCart();
+  const { isEmpty, items, cartTotal, emptyCart } = useCart();
   const { toggleCartDrawer, closeCartDrawer } = useContext(SidebarContext);
   const { data: globalSetting } = useAsync(SettingServices.getGlobalSetting);
 
@@ -42,10 +42,15 @@ const Cart = () => {
       </span>
       <span className="rounded-lg font-bold font-serif py-2 px-3 bg-white text-emerald-600">
         {currency}
-        {cartTotal.toFixed(2)}
+        {!userInfo ? 0 : cartTotal.toFixed(2)}
       </span>
     </button>
   );
+  useEffect(() => {
+    if (!userInfo) {
+      emptyCart()
+    }
+  }, [userInfo])
 
   return (
     <>

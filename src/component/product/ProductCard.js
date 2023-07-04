@@ -13,6 +13,9 @@ import Image from "next/image";
 import { useState } from "react";
 import { IoAdd, IoBagAddSharp, IoRemove } from "react-icons/io5";
 import { useCart } from "react-use-cart";
+import { UserContext } from "@context/UserContext";
+import { useContext } from "react";
+import { toast } from "react-toastify";
 
 const ProductCard = ({ product, attributes }) => {
   const { items, addItem, updateItemQuantity, inCart } = useCart();
@@ -25,8 +28,14 @@ const ProductCard = ({ product, attributes }) => {
   const currency = globalSetting?.default_currency || "$";
 
   // console.log('attributes in product cart',attributes)
-
+  const {
+    state: { userInfo }
+  } = useContext(UserContext);
   const handleAddItem = (p) => {
+    if(!userInfo){
+      toast("Please Login First")
+    }
+    else {
     if (p.stock < 1) return notifyError("Insufficient stock!");
 
     if (p?.variants?.length > 0) {
@@ -43,7 +52,7 @@ const ProductCard = ({ product, attributes }) => {
       price: p.prices.price,
       originalPrice: product.prices?.originalPrice,
     };
-    addItem(newItem);
+    addItem(newItem);}
   };
 
   const handleModalOpen = (event, id) => {
