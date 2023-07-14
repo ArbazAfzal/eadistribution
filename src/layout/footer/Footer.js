@@ -237,7 +237,7 @@ const Footer = () => {
           Copyright 2022 @{" "}
           <Link href="https://themeforest.net/user/htmllover">
             <a target="_blank" rel="noopener noreferrer" className="text-emerald-500">
-              HtmlLover
+            E&A Distribution Limited UK
             </a>
           </Link>
           , All rights reserved.
