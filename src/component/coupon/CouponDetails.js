@@ -82,7 +82,7 @@ const CouponDetails = ({ coupon }) => {
                         Inactive
                       </span>
                     ) : (
-                      <span className="text-emerald-600 inline-block">
+                      <span className="text-pink-600inline-block">
                         Active
                       </span>
                     )}
@@ -96,7 +96,7 @@ const CouponDetails = ({ coupon }) => {
                   >
                     <button className="block w-full">
                       {copied && coupon.couponCode === copiedCode ? (
-                        <span className="text-emerald-600 text-base leading-7 font-semibold">
+                        <span className="text-pink-600text-base leading-7 font-semibold">
                           Copied!
                         </span>
                       ) : (

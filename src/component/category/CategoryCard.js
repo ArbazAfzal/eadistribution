@@ -57,7 +57,7 @@ const CategoryCard = ({ title, icon, nested, id }) => {
     <>
       <a
         onClick={() => showCategory(id, title)}
-        className="p-2 flex items-center rounded-md hover:bg-gray-50 w-full hover:text-emerald-600"
+        className="p-2 flex items-center rounded-md hover:bg-gray-50 w-full hover:text-green-600 "
         role="button"
       >
         {icon ? (
@@ -71,7 +71,7 @@ const CategoryCard = ({ title, icon, nested, id }) => {
           />
         )}
 
-        <div className="inline-flex items-center justify-between ml-3 text-sm font-medium w-full hover:text-emerald-600">
+        <div className="inline-flex items-center justify-between ml-3 text-sm font-medium w-full hover:text-green-600 ">
           {title}
           {nested?.length > 0 && (
             <span className="transition duration-700 ease-in-out inline-flex loading-none items-end text-gray-400">
@@ -92,13 +92,13 @@ const CategoryCard = ({ title, icon, nested, id }) => {
                       showingTranslateValue(children.name, lang)
                     )
                   }
-                  className="flex items-center font-serif pr-2 text-sm text-gray-600 hover:text-emerald-600 py-1 cursor-pointer"
+                  className="flex items-center font-serif pr-2 text-sm text-gray-600 hover:  text-green-600 py-1 cursor-pointer"
                 >
                   <span className="text-xs text-gray-500">
                     <IoRemoveSharp />
                   </span>
 
-                  <div className="inline-flex items-center justify-between ml-3 text-sm font-medium w-full hover:text-emerald-600">
+                  <div className="inline-flex items-center justify-between ml-3 text-sm font-medium w-full hover:text-green-600 ">
                     {showingTranslateValue(children.name, lang)}
 
                     {children.children.length > 0 ? (
@@ -121,7 +121,7 @@ const CategoryCard = ({ title, icon, nested, id }) => {
                       showingTranslateValue(children.name, lang)
                     )
                   }
-                  className="flex items-center font-serif py-1 text-sm text-gray-600 hover:text-emerald-600 cursor-pointer"
+                  className="flex items-center font-serif py-1 text-sm text-gray-600 hover:  text-green-600 cursor-pointer"
                 >
                   <span className="text-xs text-gray-500 pr-2">
                     <IoRemoveSharp />
@@ -143,7 +143,7 @@ const CategoryCard = ({ title, icon, nested, id }) => {
                             showingTranslateValue(subChildren?.name, lang)
                           )
                         }
-                        className="flex items-center font-serif py-1 text-sm text-gray-600 hover:text-emerald-600 cursor-pointer"
+                        className="flex items-center font-serif py-1 text-sm text-gray-600 hover:  text-green-600 cursor-pointer"
                       >
                         <span className="text-xs text-gray-500 pr-2">
                           <IoRemoveSharp />

@@ -25,28 +25,28 @@ const Footer = () => {
             <ul className="text-sm flex flex-col space-y-3">
               <li className="flex items-baseline">
                 <Link href="/about-us">
-                  <a className="text-gray-600 inline-block w-full hover:text-emerald-500">
+                  <a className="text-gray-600 inline-block w-full hover:text-green-500 ">
                     {t("common:footer-about-us")}
                   </a>
                 </Link>
               </li>
               <li className="flex items-baseline">
                 <Link href="/contact-us">
-                  <a className="text-gray-600 inline-block w-full hover:text-emerald-500">
+                  <a className="text-gray-600 inline-block w-full hover:text-green-500 ">
                     {t("common:footer-contact-us")}
                   </a>
                 </Link>
               </li>
               <li className="flex items-baseline">
                 <Link href="#">
-                  <a className="text-gray-600 inline-block w-full hover:text-emerald-500">
+                  <a className="text-gray-600 inline-block w-full hover:text-green-500 ">
                     {t("common:footer-careers")}
                   </a>
                 </Link>
               </li>
               <li className="flex items-baseline">
                 <Link href="#">
-                  <a className="text-gray-600 inline-block w-full hover:text-emerald-500">
+                  <a className="text-gray-600 inline-block w-full hover:text-green-500 ">
                     {t("common:footer-news")}
                   </a>
                 </Link>
@@ -60,7 +60,7 @@ const Footer = () => {
             <ul className="text-sm lg:text-15px flex flex-col space-y-3">
               <li className="flex items-baseline">
                 <Link href="/search?Category=fish--meat">
-                  <a className="text-gray-600 inline-block w-full hover:text-emerald-500">
+                  <a className="text-gray-600 inline-block w-full hover:text-green-500 ">
                     {t("common:footer-top-category-fish-meat")}
                   </a>
                 </Link>
@@ -68,21 +68,21 @@ const Footer = () => {
 
               <li className="flex items-baseline">
                 <Link href="/search?Category=drinks">
-                  <a className="text-gray-600 inline-block w-full hover:text-emerald-500">
+                  <a className="text-gray-600 inline-block w-full hover:text-green-500 ">
                     {t("common:footer-top-category-soft-drinks")}
                   </a>
                 </Link>
               </li>
               <li className="flex items-baseline">
                 <Link href="search?Category=baby-care">
-                  <a className="text-gray-600 inline-block w-full hover:text-emerald-500">
+                  <a className="text-gray-600 inline-block w-full hover:text-green-500 ">
                     {t("common:footer-top-category-baby-care")}
                   </a>
                 </Link>
               </li>
               <li className="flex items-baseline">
                 <Link href="search?Category=beauty--health">
-                  <a className="text-gray-600 inline-block w-full hover:text-emerald-500">
+                  <a className="text-gray-600 inline-block w-full hover:text-green-500 ">
                     {t("common:footer-top-category-beauty-health")}
                   </a>
                 </Link>
@@ -96,28 +96,28 @@ const Footer = () => {
             <ul className="text-sm lg:text-15px flex flex-col space-y-3">
               <li className="flex items-baseline">
                 <Link href={`${userInfo?.email ? "/user/dashboard" : "#"}`}>
-                  <a className="text-gray-600 inline-block w-full hover:text-emerald-500">
+                  <a className="text-gray-600 inline-block w-full hover:text-green-500 ">
                     {t("common:footer-my-account-dashboard")}
                   </a>
                 </Link>
               </li>
               <li className="flex items-baseline">
                 <Link href={`${userInfo?.email ? "/user/my-orders" : "#"}`}>
-                  <a className="text-gray-600 inline-block w-full hover:text-emerald-500">
+                  <a className="text-gray-600 inline-block w-full hover:text-green-500 ">
                     {t("common:footer-my-account-myOrders")}
                   </a>
                 </Link>
               </li>
               <li className="flex items-baseline">
                 <Link href={`${userInfo?.email ? "/user/dashboard" : "#"}`}>
-                  <a className="text-gray-600 inline-block w-full hover:text-emerald-500">
+                  <a className="text-gray-600 inline-block w-full hover:text-green-500 ">
                     {t("common:footer-my-account-recentOrders")}
                   </a>
                 </Link>
               </li>
               <li className="flex items-baseline">
                 <Link href={`${userInfo?.email ? "/user/update-profile" : "#"}`}>
-                  <a className="text-gray-600 inline-block w-full hover:text-emerald-500">
+                  <a className="text-gray-600 inline-block w-full hover:text-green-500 ">
                     {t("common:footer-my-account-updatedProfile")}
                   </a>
                 </Link>
@@ -127,7 +127,7 @@ const Footer = () => {
           <div className="pb-3.5 sm:pb-0 col-span-1 md:col-span-2 lg:col-span-3">
             <Link href="/">
               <a className="mr-3 lg:mr-12 xl:mr-12" rel="noreferrer">
-                <Image width={110} height={40} src="/logo/logo-color.svg" alt="logo" />
+                <Image width={128} height={27} src="/logo/logo.png" alt="logo" />
               </a>
             </Link>
             <p className="leading-7 font-sans text-sm text-gray-600 mt-3">
@@ -213,7 +213,7 @@ const Footer = () => {
             </div>
             <div className="col-span-1 text-center hidden lg:block md:block">
               <p className="text-base leading-7 font-medium block">{t("common:footer-call-us")}</p>
-              <h5 className="text-2xl font-bold text-emerald-500 leading-7">+012345-67900</h5>
+              <h5 className="text-2xl font-bold  text-green-500  leading-7">01213141458</h5>
             </div>
             <div className="col-span-1 hidden lg:block md:block">
               <ul className="lg:text-right">
@@ -236,7 +236,7 @@ const Footer = () => {
         <p className="text-sm text-gray-500 leading-6">
           Copyright 2022 @{" "}
           <Link href="https://themeforest.net/user/htmllover">
-            <a target="_blank" rel="noopener noreferrer" className="text-emerald-500">
+            <a target="_blank" rel="noopener noreferrer" className=" text-green-500 ">
             E&A Distribution Limited UK
             </a>
           </Link>

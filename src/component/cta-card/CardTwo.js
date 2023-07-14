@@ -14,13 +14,13 @@ const CardTwo = () => {
             </span>
             <h2 className="font-serif text-lg lg:text-2xl font-bold mb-1">
             {t("common:promotional-banner-title-text")}
-              <span className="text-emerald-500"> {t("common:promotional-banner-title-span")}</span>
+              <span className=" text-green-500 "> {t("common:promotional-banner-title-span")}</span>
             </h2>
             <p className="text-sm font-sans leading-6">
             {t("common:promotional-banner-paragraph-text")}
             </p>
             <Link href="#downloadApp">
-              <a className="lg:w-1/4 text-xs font-serif font-medium inline-block mt-5 px-8 py-3 bg-emerald-500 text-center text-white rounded-full hover:text-white hover:bg-emerald-600">
+              <a className="lg:w-1/4 text-xs font-serif font-medium inline-block mt-5 px-8 py-3  bg-emerald-500  text-center text-white rounded-full hover:text-white hover:bg-emerald-600">
               {t("common:promotional-banner-link-text")}
               </a>
             </Link>

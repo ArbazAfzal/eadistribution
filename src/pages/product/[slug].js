@@ -236,7 +236,7 @@ const ProductScreen = ({ product, attributes, relatedProduct }) => {
             <div className="mx-auto px-3 lg:px-10 max-w-screen-2xl">
               <div className="flex items-center pb-4">
                 <ol className="flex items-center w-full overflow-hidden font-serif">
-                  <li className="text-sm pr-1 transition duration-200 ease-in cursor-pointer hover:text-emerald-500 font-semibold">
+                  <li className="text-sm pr-1 transition duration-200 ease-in cursor-pointer hover: text-green-500  font-semibold">
                     <Link href="/">
                       <a>Home</a>
                     </Link>
@@ -245,7 +245,7 @@ const ProductScreen = ({ product, attributes, relatedProduct }) => {
                     {" "}
                     <FiChevronRight />{" "}
                   </li>
-                  <li className="text-sm pl-1 transition duration-200 ease-in cursor-pointer hover:text-emerald-500 font-semibold ">
+                  <li className="text-sm pl-1 transition duration-200 ease-in cursor-pointer hover: text-green-500  font-semibold ">
                     <Link
                       href={`/search?category=${category_name}&_id=${product?.category?._id}`}
                     >
@@ -415,7 +415,7 @@ const ProductScreen = ({ product, attributes, relatedProduct }) => {
                               </div>
                               <button
                                 onClick={() => handleAddToCart(product)}
-                                className="text-sm leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold font-serif text-center justify-center border-0 border-transparent rounded-md focus-visible:outline-none focus:outline-none text-white px-4 ml-4 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4 hover:text-white bg-emerald-500 hover:bg-emerald-600 w-full h-12"
+                                className="text-sm leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold font-serif text-center justify-center border-0 border-transparent rounded-md focus-visible:outline-none focus:outline-none text-white px-4 ml-4 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4 hover:text-white  bg-emerald-500  hover:bg-emerald-600 w-full h-12"
                               >
                                 {t("common:addToCart")}
                               </button>
@@ -451,7 +451,7 @@ const ProductScreen = ({ product, attributes, relatedProduct }) => {
                               {t("common:shareYourSocialText")}
                             </p>
                             <ul className="flex mt-4">
-                              <li className="flex items-center text-center border border-gray-100 rounded-full hover:bg-emerald-500  mr-2 transition ease-in-out duration-500">
+                              <li className="flex items-center text-center border border-gray-100 rounded-full hover: bg-emerald-500  mr-2 transition ease-in-out duration-500">
                                 <FacebookShareButton
                                   url={`https://supermarket-plum.vercel.app/product/${router.query.slug}`}
                                   quote=""
@@ -459,7 +459,7 @@ const ProductScreen = ({ product, attributes, relatedProduct }) => {
                                   <FacebookIcon size={32} round />
                                 </FacebookShareButton>
                               </li>
-                              <li className="flex items-center text-center border border-gray-100 rounded-full hover:bg-emerald-500  mr-2 transition ease-in-out duration-500">
+                              <li className="flex items-center text-center border border-gray-100 rounded-full hover: bg-emerald-500  mr-2 transition ease-in-out duration-500">
                                 <TwitterShareButton
                                   url={`https://supermarket-plum.vercel.app/product/${router.query.slug}`}
                                   quote=""
@@ -467,7 +467,7 @@ const ProductScreen = ({ product, attributes, relatedProduct }) => {
                                   <TwitterIcon size={32} round />
                                 </TwitterShareButton>
                               </li>
-                              <li className="flex items-center text-center border border-gray-100 rounded-full hover:bg-emerald-500  mr-2 transition ease-in-out duration-500">
+                              <li className="flex items-center text-center border border-gray-100 rounded-full hover: bg-emerald-500  mr-2 transition ease-in-out duration-500">
                                 <RedditShareButton
                                   url={`https://supermarket-plum.vercel.app/product/${router.query.slug}`}
                                   quote=""
@@ -475,7 +475,7 @@ const ProductScreen = ({ product, attributes, relatedProduct }) => {
                                   <RedditIcon size={32} round />
                                 </RedditShareButton>
                               </li>
-                              <li className="flex items-center text-center border border-gray-100 rounded-full hover:bg-emerald-500  mr-2 transition ease-in-out duration-500">
+                              <li className="flex items-center text-center border border-gray-100 rounded-full hover: bg-emerald-500  mr-2 transition ease-in-out duration-500">
                                 <WhatsappShareButton
                                   url={`https://supermarket-plum.vercel.app/product/${router.query.slug}`}
                                   quote=""
@@ -483,7 +483,7 @@ const ProductScreen = ({ product, attributes, relatedProduct }) => {
                                   <WhatsappIcon size={32} round />
                                 </WhatsappShareButton>
                               </li>
-                              <li className="flex items-center text-center border border-gray-100 rounded-full hover:bg-emerald-500  mr-2 transition ease-in-out duration-500">
+                              <li className="flex items-center text-center border border-gray-100 rounded-full hover: bg-emerald-500  mr-2 transition ease-in-out duration-500">
                                 <LinkedinShareButton
                                   url={`https://supermarket-plum.vercel.app/product/${router.query.slug}`}
                                   quote=""

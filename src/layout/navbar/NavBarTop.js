@@ -48,7 +48,7 @@ const NavBarTop = () => {
               {t("common:Call Us")}
               <a
                 href="tel:+012345609"
-                className="font-bold text-emerald-500 ml-1"
+                className="font-bold  text-green-500  ml-1"
               >
                 01213141458
               </a>
@@ -56,14 +56,14 @@ const NavBarTop = () => {
 
             <div className="lg:text-right flex items-center">
               <Link href="/about-us">
-                <a className="font-medium hover:text-emerald-600">
+                <a className="font-medium hover:text-green-600 ">
                   {" "}
                   {t("common:About Us")}
                 </a>
               </Link>
               <span className="mx-2">|</span>
               <Link href="/contact-us">
-                <a className="font-medium hover:text-emerald-600">
+                <a className="font-medium hover:text-green-600 ">
                   {" "}
                   {t("common:Contact Us")}
                 </a>
@@ -71,7 +71,7 @@ const NavBarTop = () => {
               <span className="mx-2">|</span>
               <button
                 onClick={handleModal}
-                className="font-medium hover:text-emerald-600"
+                className="font-medium hover:text-green-600 "
               >
                 {t("common:My account")}
               </button>
@@ -82,7 +82,7 @@ const NavBarTop = () => {
                   {" "}
                   <button
                     onClick={handleLogOut}
-                    className="flex items-center font-medium hover:text-emerald-600"
+                    className="flex items-center font-medium hover:text-green-600 "
                   >
                     <span className="mr-1">
                       <FiUser />
@@ -95,7 +95,7 @@ const NavBarTop = () => {
                   {" "}
                   <button
                     onClick={() => setModalOpen(!modalOpen)}
-                    className="flex items-center font-medium hover:text-emerald-600"
+                    className="flex items-center font-medium hover:text-green-600 "
                   >
                     <span className="mr-1">
                       <FiUser />
