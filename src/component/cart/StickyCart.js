@@ -33,7 +33,7 @@ const StickyCart = () => {
         <div className="flex flex-col items-center justify-center bg-emerald-700 p-2 text-white text-base font-serif font-medium rounded-bl-lg mx-auto">
           {currency}
           {!userInfo ? 0 : cartTotal.toFixed(2)}
-        </div>
+        </div> 
       </div>
     </button>
   );
