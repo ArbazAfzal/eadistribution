@@ -158,7 +158,7 @@ const ForgetPassword = () => {
               <button
                 disabled={loading}
                 type="submit"
-                className="w-full text-center py-3 rounded bg-emerald-500 font-medium text-sm text-white hover:bg-emerald-600 transition-all focus:outline-none my-1"
+                className="w-full text-center py-3 rounded  bg-emerald-500  font-medium text-sm text-white hover:bg-emerald-600 transition-all focus:outline-none my-1"
               >
                 {showLogin ? "Login" : "Reset Password"}
               </button>

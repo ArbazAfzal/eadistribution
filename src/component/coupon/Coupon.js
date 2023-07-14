@@ -33,7 +33,7 @@ const Coupon = ({ couponInHome }) => {
           <span> {error}</span>
         </p>
       ) : couponInHome ? (
-        data?.slice(0, 2).map((coupon) => (
+       Array.isArray(data)&& data?.slice(0, 2).map((coupon) => (
           <div
             key={coupon._id}
             className="coupon coupon-home mx-4 my-5 block md:flex lg:flex md:justify-between lg:justify-between items-center bg-white rounded-md shadow"
@@ -66,7 +66,7 @@ const Coupon = ({ couponInHome }) => {
                         Inactive
                       </span>
                     ) : (
-                      <span className="text-emerald-600 inline-block px-4 py-1 rounded-full font-medium text-xs bg-emerald-100">
+                      <span className="text-pink-600inline-block px-4 py-1 rounded-full font-medium text-xs bg-emerald-100">
                         Active
                       </span>
                     )}
@@ -118,7 +118,7 @@ const Coupon = ({ couponInHome }) => {
                       >
                         <button className="block w-full">
                           {copied && coupon.couponCode === copiedCode ? (
-                            <span className="text-emerald-600 text-sm leading-7 font-semibold">
+                            <span className="text-pink-600text-sm leading-7 font-semibold">
                               Copied!
                             </span>
                           ) : (
@@ -214,7 +214,7 @@ const Coupon = ({ couponInHome }) => {
                             Inactive
                           </span>
                         ) : (
-                          <span className="text-emerald-600 inline-block">
+                          <span className="text-pink-600inline-block">
                             Active
                           </span>
                         )}
@@ -228,7 +228,7 @@ const Coupon = ({ couponInHome }) => {
                       >
                         <button className="block w-full">
                           {copied && coupon.couponCode === copiedCode ? (
-                            <span className="text-emerald-600 text-base leading-7 font-semibold">
+                            <span className="text-pink-600text-base leading-7 font-semibold">
                               Copied!
                             </span>
                           ) : (

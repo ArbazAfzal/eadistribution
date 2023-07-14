@@ -9,7 +9,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link rel="icon" href="/logot.png" />
+          <link rel="icon" width={128} height={27} href="/logot.png" />
           <meta
             property="og:title"
             content="ea distribution"

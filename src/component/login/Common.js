@@ -52,7 +52,7 @@ const Common = ({ setModalOpen }) => {
             // clientId={`${process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}`}
             render={(renderProps) => (
               <button
-                className="text-sm inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold font-serif text-center justify-center rounded-md focus:outline-none text-gray-600 bg-gray-100 shadow-sm md:px-2 my-1 sm:my-1 md:my-1 lg:my-0 lg:px-3 py-4 md:py-3.5 lg:py-4 hover:text-white hover:bg-emerald-500 h-11 md:h-12 w-full"
+                className="text-sm inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold font-serif text-center justify-center rounded-md focus:outline-none text-gray-600 bg-gray-100 shadow-sm md:px-2 my-1 sm:my-1 md:my-1 lg:my-0 lg:px-3 py-4 md:py-3.5 lg:py-4 hover:text-white hover: bg-emerald-500  h-11 md:h-12 w-full"
                 onClick={renderProps.onClick}
                 disabled={renderProps.disabled}
               >
@@ -71,7 +71,7 @@ const Common = ({ setModalOpen }) => {
             {showRegister ? "Already have a account ?" : "Not have a account ?"}
             <button
               onClick={handleModal}
-              className="text-gray-800 hover:text-emerald-500 font-bold mx-2"
+              className="text-gray-800 hover: text-green-500  font-bold mx-2"
             >
               {showRegister ? "Login" : "Register"}
             </button>
