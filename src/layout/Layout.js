@@ -17,7 +17,7 @@ const Layout = ({ title, description, children }) => {
         <Head>
           <title>
             {title
-              ? `KachaBazar | ${title}`
+              ? `ea distribution | ${title}`
               : " ea distribution"}
           </title>
           {description && <meta name="description" content={description} />}
