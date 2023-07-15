@@ -174,7 +174,7 @@ const contactData = [
     title: 'contact-page-box1-title',
     info: 'contact-page-box1-info',
     icon: FiMail,
-    contact: 'kachabazar@gmail.com',
+    contact: 'accounts@eadistribution.co.uk',
     className: 'bg-emerald-100',
   },
   {
@@ -182,7 +182,7 @@ const contactData = [
     title: 'contact-page-box2-title',
     info: 'contact-page-box2-info',
     icon: FiPhoneCall,
-    contact: '029-00124667',
+    contact: '01213141458',
     className: 'bg-yellow-100',
   },
   {
