@@ -28,12 +28,10 @@ const UpdateProfile = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    notifySuccess("This Feature is disabled for demo!");
-    return;
 
     setLoading(true);
 
-    // notifySuccess('For demo this feature is disable!');
+   
 
     const userData = {
       name: data.name,

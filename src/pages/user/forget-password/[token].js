@@ -29,8 +29,7 @@ const ForgetPassword = () => {
   password.current = watch("newPassword");
 
   const submitHandler = ({ registerEmail, password, newPassword }) => {
-    notifySuccess("This Feature is disabled for demo!");
-    return;
+ 
     setLoading(true);
     if (newPassword) {
       CustomerServices.resetPassword({

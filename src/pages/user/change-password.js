@@ -19,8 +19,7 @@ const ChangePassword = () => {
   const [loading, setLoading] = useState(false);
 
   const onSubmit = ({ email, currentPassword, newPassword }) => {
-    notifySuccess("This Feature is disabled for demo!");
-    return;
+  
     setLoading(true);
     CustomerServices.changePassword({ email, currentPassword, newPassword })
       .then((res) => {
