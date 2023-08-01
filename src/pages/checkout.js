@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { CardElement } from "@stripe/react-stripe-js";
 import Link from "next/link";
@@ -20,7 +20,9 @@ import InputShipping from "@component/form/InputShipping";
 import InputPayment from "@component/form/InputPayment";
 import useCheckoutSubmit from "@hooks/useCheckoutSubmit";
 import useTranslation from "next-translate/useTranslation";
-
+import { UserContext } from "@context/UserContext";
+import axios from 'axios';
+import { useState } from "react";
 const Checkout = () => {
   const {
     handleSubmit,
@@ -47,6 +49,13 @@ const Checkout = () => {
 
   const { t } = useTranslation();
 
+  const {
+    state: { userInfo }
+  } = useContext(UserContext);
+
+  console.log(userInfo, "========")
+
+
   return (
     <>
       <Layout title="Checkout" description="this is checkout page">
@@ -59,6 +68,7 @@ const Checkout = () => {
                     <h2 className="font-semibold font-serif text-base text-gray-700 pb-3">
                       01. {t("common:personalDetails")}
                     </h2>
+
                     <div className="grid grid-cols-6 gap-6">
                       <div className="col-span-6 sm:col-span-3">
                         <InputArea
@@ -66,7 +76,8 @@ const Checkout = () => {
                           label={t("common:firstName")}
                           name="firstName"
                           type="text"
-                          placeholder="John"
+                          value={userInfo.name}
+                          placeholder="Jnoe"
                         />
                         <Error errorName={errors.firstName} />
                       </div>
@@ -88,7 +99,8 @@ const Checkout = () => {
                           label={t("common:emailAddress")}
                           name="email"
                           type="email"
-                          placeholder="youremail@gmail.com"
+                          value={userInfo.email}
+                          placeholder="email"
                         />
                         <Error errorName={errors.email} />
                       </div>
