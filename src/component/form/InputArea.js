@@ -9,6 +9,7 @@ const InputArea = ({
   type,
   placeholder,
   Icon,
+  value
 }) => {
   return (
     <>
@@ -26,6 +27,7 @@ const InputArea = ({
             required: `${label} is required!`,
           })}
           defaultValue={defaultValue}
+          value={value}
           type={type}
           placeholder={placeholder}
           name={name}
