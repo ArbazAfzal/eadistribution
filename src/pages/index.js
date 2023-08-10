@@ -158,10 +158,10 @@ export const getServerSideProps = async (context) => {
     AttributeServices.getShowingAttributes(),
   ]);
 
-  const popularProducts = data?.products.filter((p) => p.prices.discount < 1);
+  const popularProducts = data?.products.filter((p) => p.discount < 1);
 
   const discountProducts = data?.products.filter(
-    (p) => p.prices?.discount >= 1
+    (p) => p.discount >= 1
   );
 
   return {
