@@ -28,7 +28,7 @@ const FeatureCategory = () => {
     router.push(url);
     setIsLoading(!isLoading);
   };
-
+  console.log("data:::::::", data);
   return (
     <>
       {error ? (
@@ -37,7 +37,7 @@ const FeatureCategory = () => {
         </p>
       ) : (
         <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-6">
-          {data[0]?.children?.map((category, i) => (
+          {data?.map((category, i) => (
             <li className="group" key={i + 1}>
               <div className="flex w-full h-full border border-gray-100 shadow-sm bg-white p-4 cursor-pointer transition duration-200 ease-linear transform group-hover:shadow-lg">
                 <div className="flex items-center">
@@ -62,14 +62,11 @@ const FeatureCategory = () => {
                   <div className="pl-4">
                     <h3
                       onClick={() =>
-                        handleCategoryClick(
-                          category._id,
-                          showingTranslateValue(category?.name, lang)
-                        )
+                        handleCategoryClick(category._id, category?.name)
                       }
                       className="text-sm text-gray-600 font-serif font-medium leading-tight line-clamp-1  group-hover"
                     >
-                      {showingTranslateValue(category?.name, lang)}
+                      {category?.name}
                     </h3>
                     <ul className="pt-1 mt-1">
                       {category?.children?.slice(0, 3).map((child) => (

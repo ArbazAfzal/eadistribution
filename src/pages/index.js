@@ -160,9 +160,7 @@ export const getServerSideProps = async (context) => {
 
   const popularProducts = data?.products.filter((p) => p.discount < 1);
 
-  const discountProducts = data?.products.filter(
-    (p) => p.discount >= 1
-  );
+  const discountProducts = data?.products.filter((p) => p.discount >= 1);
 
   return {
     props: {
